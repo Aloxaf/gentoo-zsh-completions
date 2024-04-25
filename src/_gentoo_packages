@@ -126,7 +126,7 @@ _gentoo_packages_update_installed(){
    installed_portage=($installed_dir/*-*/*)
 
    installed_pkgname=(${${installed_portage:t}%%-[0-9]*})
-   _wanted packages expl 'package' compadd "$@" ${installed_pkgname}
+   _wanted packages expl 'package' compadd "$@" -- ${installed_pkgname}
 
    installed_list=( ${${installed_portage#$installed_dir/}%%-[0-9]*} )
    _wanted cat_packages expl 'category/package' _multi_parts "$@" / installed_list
